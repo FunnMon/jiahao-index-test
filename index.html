@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#20211d">
+  <meta name="description" content="16道生活场景题，测测你的嘉豪指数。找到你的主角风格，生成并保存专属结果档案。原创娱乐测评。">
+  <title>嘉豪指数测试｜你的主角模式，开到几档？</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到测评</a>
+  <header class="site-head container">
+    <a class="wordmark" href="#home" aria-label="嘉豪指数首页"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 0v28M0 14h28M4 4l20 20M4 24 24 4"/></svg>嘉豪指数</a>
+    <button class="text-button" type="button" id="rules-button">玩法与计分</button>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="home" class="hero container" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <h1 id="home-title">你有多<br>嘉豪？</h1>
+        <p class="lead">你的主角模式，究竟开到了几档？</p>
+        <div class="hero-actions"><button class="button primary" id="start-button" type="button">测测我的嘉豪指数</button><button class="text-button" id="resume-button" type="button" hidden>继续上次测评</button></div>
+        <p class="hero-note">16 道场景题，无需填写姓名</p>
+      </div>
+      <div class="trial-wrap">
+        <form class="trial" id="trial" data-slot="opening-question" data-alt="测评的第一道真实场景题">
+          <div class="trial-top"><span>先试一道</span><span aria-hidden="true">01 / 16</span></div>
+          <fieldset>
+            <legend>朋友说：<br>“你今天有点酷。”<br>你的第一反应是？</legend>
+            <div class="trial-options">
+              <button type="submit" name="answer" value="0"><span>A</span>笑着道谢，给朋友也拍张照。</button>
+              <button type="submit" name="answer" value="1"><span>B</span>压低声音：“只是随便穿穿。”</button>
+              <button type="submit" name="answer" value="2"><span>C</span>“刚好干净。”接着聊回正题。</button>
+              <button type="submit" name="answer" value="3"><span>D</span>嘴上否认，心里循环播放三遍。</button>
+            </div>
+          </fieldset>
+          <p class="trial-foot">凭第一反应选，答案会带入正式测评。</p>
+        </form>
+      </div>
+    </section>
+    <section id="quiz" class="quiz-view container" aria-labelledby="question-title" hidden></section>
+    <section id="result" class="result-view container" aria-labelledby="result-title" hidden></section>
+    <noscript><p class="container no-script">这是在浏览器本地运行的互动测评，请开启 JavaScript 后答题。你的答案不会发送到服务器。</p></noscript>
+  </main>
+  <footer class="site-foot container"><p>偶尔嘉豪，也没什么不好。</p><span>原创娱乐测评，不代表人格或心理诊断。</span></footer>
+  <dialog id="rules" aria-labelledby="rules-title">
+    <div class="dialog-head"><h2 id="rules-title">怎么玩，怎么算</h2><button type="button" class="text-button" id="close-rules">关闭</button></div>
+    <p>16 道生活场景题，每题选一个最接近你的反应。选好后按“下一题”继续，可以返回修改。</p>
+    <p>四个维度各有 4 题：出场排面、高光表达、故事浓度、高手姿态。每题计 0 至 3 分；总分除以 48，再乘 100 并四舍五入，得到嘉豪指数。各维度单独按满分 12 换算。</p>
+    <p>指数低于 20 为“原生松弛派”，达到 80 为“全域嘉豪”；其余按最高维度产生四种风格称号。并列时依次按出场、高光、故事、高手归类。指数是本作品的娱乐规则，不是人群排名，也不是科学量表。</p>
+    <p>进度只保存在当前浏览器。支持保存结果 PNG；部分手机浏览器需打开生成图片后长按保存。不会要求填写姓名或联系方式。</p>
+  </dialog>
+  <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.prepend(im); } };</script>
+  <script src="quiz-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

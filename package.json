@@ -1,0 +1,12 @@
+{
+  "name": "jiahao-index-test",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "嘉豪指数测试：16 道场景题与可下载的个人结果档案",
+  "scripts": {
+    "test": "node scripts/check.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
